@@ -21,19 +21,19 @@ description: "Welcome to the homepage of Your Lab Name at University Name."
       <div class="hero-visual">
         <div class="hero-stat-grid">
           <div class="hero-stat">
-            <div class="stat-number">12+</div>
+            <div class="stat-number">3</div>
             <div class="stat-label">Lab Members</div>
           </div>
           <div class="hero-stat">
-            <div class="stat-number">80+</div>
+            <div class="stat-number">5+</div>
             <div class="stat-label">Publications</div>
           </div>
           <div class="hero-stat">
-            <div class="stat-number">5</div>
+            <div class="stat-number">1</div>
             <div class="stat-label">Active Grants</div>
           </div>
           <div class="hero-stat">
-            <div class="stat-number">2015</div>
+            <div class="stat-number">2022</div>
             <div class="stat-label">Founded</div>
           </div>
         </div>
@@ -48,7 +48,7 @@ description: "Welcome to the homepage of Your Lab Name at University Name."
     <div class="section-header reveal">
       <p class="section-eyebrow">What We Do</p>
       <h2 class="section-title">Research Focus Areas</h2>
-      <p class="section-subtitle">Our lab investigates fundamental questions in [your field], combining experimental and computational approaches.</p>
+      <p class="section-subtitle">Our lab investigates the intersection of place & health. We believe that understanding the spatial context in which people live and develop is critical for informed healthcare delivery. We specialize in leveraging GIS and spatial computing to enrich patient data and provide research support. </p>
     </div>
 
     <div class="research-grid">
