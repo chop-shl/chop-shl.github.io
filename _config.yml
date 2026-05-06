@@ -1,0 +1,68 @@
+# =============================================================================
+# Site Settings — UPDATE THESE
+# =============================================================================
+title: "Your Lab Name"
+description: "Brief description of your lab's research focus."
+url: "https://yourusername.github.io"
+baseurl: ""  # leave empty for username.github.io; use "/repo-name" for project pages
+
+# Lab Identity
+lab_name: "Your Lab Name"
+lab_tagline: "Advancing science through rigorous inquiry."
+institution: "University Name"
+department: "Department of Something"
+pi_name: "Professor Name"
+pi_email: "pi@university.edu"
+lab_email: "lab@university.edu"
+lab_address: "Building Name, Room 000, City, State ZIP"
+
+# Social / Academic Links (leave blank to hide)
+github_username:
+twitter_username:
+google_scholar:        # full URL to your Scholar profile
+lab_phone:
+
+# =============================================================================
+# Build Settings
+# =============================================================================
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Collections
+collections:
+  members:
+    output: true
+    permalink: /people/:name/
+  publications:
+    output: false
+  research:
+    output: true
+    permalink: /research/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: members
+    values:
+      layout: member
+  - scope:
+      path: ""
+      type: research
+    values:
+      layout: research-area
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - .git
+  - node_modules
