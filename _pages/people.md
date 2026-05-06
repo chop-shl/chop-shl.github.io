@@ -60,33 +60,46 @@ permalink: /people/
   </div>
 </section>
 
-<!-- POSTDOCS & RESEARCHERS -->
+<!-- TEAM MEMBERS -->
 <section class="section section--alt">
   <div class="container">
     <div class="section-header reveal">
-      <p class="section-eyebrow">Research Staff</p>
-      <h2 class="section-title">Postdoctoral Researchers</h2>
+      <p class="section-eyebrow">The Team</p>
+      <h2 class="section-title">Lab Members</h2>
     </div>
-    <div class="people-grid reveal">
-      {% assign postdocs = site.data.members | where_exp: "m", "m.role != 'Principal Investigator'" %}
-      {% for member in postdocs %}
-      <div class="person-card">
-        {% if member.photo %}
+
+    {% assign team = site.data.members | where_exp: "m", "m.role != 'Principal Investigator'" %}
+    {% for member in team %}
+    <div style="display: grid; grid-template-columns: 160px 1fr; gap: var(--space-10); align-items: start; max-width: 800px; margin-bottom: var(--space-12); padding-bottom: var(--space-12); border-bottom: 1px solid var(--color-divider);" class="reveal">
+      <div style="text-align: center;">
+        {% if member.photo and member.photo != "" %}
         <img src="{{ member.photo | relative_url }}" alt="Photo of {{ member.name }}"
-             class="person-photo" width="120" height="120" loading="lazy">
+             style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid var(--color-border); box-shadow: var(--shadow-md); margin: 0 auto var(--space-4);"
+             width="120" height="120" loading="lazy">
         {% else %}
-        <div class="person-photo" style="display:flex;align-items:center;justify-content:center;">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-text-faint)" stroke-width="1.5" aria-hidden="true">
+        <div style="width: 120px; height: 120px; border-radius: 50%; background: var(--color-surface-offset); border: 3px solid var(--color-border); display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-4);">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-text-faint)" stroke-width="1.5" aria-hidden="true">
             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
           </svg>
         </div>
         {% endif %}
-        <p class="person-name">{{ member.name }}</p>
-        <p class="person-role">{{ member.role }}</p>
-        {% if member.email %}<p class="person-affil"><a href="mailto:{{ member.email }}" style="color: var(--color-primary); text-decoration: none;">{{ member.email }}</a></p>{% endif %}
+        <div class="person-links" style="justify-content: center;">
+          {% if member.email and member.email != "" %}<a href="mailto:{{ member.email }}" class="person-link" style="font-size: 11px;">Email</a>{% endif %}
+          {% if member.scholar and member.scholar != "" %}<a href="{{ member.scholar }}" class="person-link" style="font-size: 11px;" target="_blank" rel="noopener noreferrer">Scholar</a>{% endif %}
+          {% if member.github and member.github != "" %}<a href="https://github.com/{{ member.github }}" class="person-link" style="font-size: 11px;" target="_blank" rel="noopener noreferrer">GitHub</a>{% endif %}
+          {% if member.website and member.website != "" %}<a href="{{ member.website }}" class="person-link" style="font-size: 11px;" target="_blank" rel="noopener noreferrer">Website</a>{% endif %}
+        </div>
       </div>
-      {% endfor %}
+      <div>
+        <h3 style="font-family: var(--font-display); font-size: var(--text-xl); margin-bottom: var(--space-1);">{{ member.name }}</h3>
+        <p style="font-size: var(--text-xs); color: var(--color-primary); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: var(--space-4);">{{ member.role }}</p>
+        <div class="prose" style="font-size: var(--text-sm);">
+          <p>{{ member.bio }}</p>
+        </div>
+      </div>
     </div>
+    {% endfor %}
+
   </div>
 </section>
 
