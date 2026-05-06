@@ -57,8 +57,8 @@ description: "Welcome to the homepage of Your Lab Name at University Name."
           <circle cx="24" cy="24" r="20"/>
           <path d="M24 14v10l6 4"/>
         </svg>
-        <span class="research-card-tag">Core Theme 1</span>
-        <h3>Research Area One</h3>
+        <span class="research-card-tag">Spatial Computing</span>
+        <h3>HIPAA-Compliant Route Estimation</h3>
         <p>Brief description of this research thrust. What questions do you explore? What methods do you use?</p>
         <div class="research-card-footer">
           <a href="{{ '/research/#area-one' | relative_url }}" class="btn btn-ghost btn-sm">Learn more →</a>
@@ -72,8 +72,8 @@ description: "Welcome to the homepage of Your Lab Name at University Name."
           <rect x="8" y="26" width="14" height="14" rx="2"/>
           <rect x="26" y="26" width="14" height="14" rx="2"/>
         </svg>
-        <span class="research-card-tag">Core Theme 2</span>
-        <h3>Research Area Two</h3>
+        <span class="research-card-tag">Population Health</span>
+        <h3>Creating Insights for Policy Stakeholders</h3>
         <p>Description of second research area. Connect it to real-world impact and open problems in the field.</p>
         <div class="research-card-footer">
           <a href="{{ '/research/#area-two' | relative_url }}" class="btn btn-ghost btn-sm">Learn more →</a>
@@ -85,8 +85,8 @@ description: "Welcome to the homepage of Your Lab Name at University Name."
           <path d="M24 4L44 40H4z"/>
           <path d="M24 20v12M20 36h8"/>
         </svg>
-        <span class="research-card-tag">Core Theme 3</span>
-        <h3>Research Area Three</h3>
+        <span class="research-card-tag">EHR Integration</span>
+        <h3>Linking EHR Records to Areal Indicators of Health</h3>
         <p>Description of a third research theme. Keep these concise and compelling — one punchy paragraph.</p>
         <div class="research-card-footer">
           <a href="{{ '/research/#area-three' | relative_url }}" class="btn btn-ghost btn-sm">Learn more →</a>
