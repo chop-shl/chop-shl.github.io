@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} — {{ site.lab_name }}{% else %}{{ site.lab_name }}{% endif %}</title>
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="lab-email" content="{{ site.lab_email }}">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="{% if page.title %}{{ page.title }} — {{ site.lab_name }}{% else %}{{ site.lab_name }}{% endif %}">
+  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+  <!-- SEO -->
+  {% seo %}
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <!-- HEADER -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <nav class="nav-inner" role="navigation" aria-label="Main navigation">
+        <!-- Logo -->
+        <a href="{{ '/' | relative_url }}" class="site-logo" aria-label="{{ site.lab_name }} home">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+            <!-- Lab flask / microscope minimal mark -->
+            <rect x="1" y="1" width="34" height="34" rx="8" fill="var(--color-primary)" opacity="0.12"/>
+            <path d="M13 8h10M18 8v8M12 24l6-8 6 8" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10 28h16" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="18" cy="28" r="2" fill="var(--color-accent)"/>
+          </svg>
+          <div>
+            <span class="logo-text">{{ site.lab_name }}</span>
+            <span class="logo-sub">{{ site.institution }}</span>
+          </div>
+        </a>
+
+        <!-- Nav links -->
+        <ul class="nav-links" role="list">
+          {% assign current = page.url | remove: '/' %}
+          <li><a href="{{ '/' | relative_url }}"
+            {% if page.url == '/' %}aria-current="page"{% endif %}>Home</a></li>
+          <li><a href="{{ '/research/' | relative_url }}"
+            {% if page.url contains 'research' %}aria-current="page"{% endif %}>Research</a></li>
+          <li><a href="{{ '/people/' | relative_url }}"
+            {% if page.url contains 'people' %}aria-current="page"{% endif %}>People</a></li>
+          <li><a href="{{ '/publications/' | relative_url }}"
+            {% if page.url contains 'publications' %}aria-current="page"{% endif %}>Publications</a></li>
+          <li><a href="{{ '/contact/' | relative_url }}"
+            {% if page.url contains 'contact' %}aria-current="page"{% endif %}>Contact</a></li>
+        </ul>
+
+        <!-- Actions -->
+        <div class="nav-actions">
+          <button class="theme-toggle" data-theme-toggle aria-label="Switch color theme">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          </button>
+          <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Open navigation menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M3 12h18M3 6h18M3 18h18"/>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content">
+    {{ content }}
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="logo-text" style="font-family: var(--font-display);">{{ site.lab_name }}</span>
+          <p>{{ site.description }}</p>
+          <p style="margin-top: var(--space-3);">
+            {{ site.department }}<br>
+            {{ site.institution }}
+          </p>
+        </div>
+        <div>
+          <p class="footer-col-title">Navigate</p>
+          <ul class="footer-links" role="list">
+            <li><a href="{{ '/' | relative_url }}">Home</a></li>
+            <li><a href="{{ '/research/' | relative_url }}">Research</a></li>
+            <li><a href="{{ '/people/' | relative_url }}">People</a></li>
+            <li><a href="{{ '/publications/' | relative_url }}">Publications</a></li>
+            <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-col-title">Contact</p>
+          <ul class="footer-links" role="list">
+            {% if site.lab_email %}
+            <li><a href="mailto:{{ site.lab_email }}">{{ site.lab_email }}</a></li>
+            {% endif %}
+            {% if site.lab_address %}
+            <li style="color: var(--color-text-muted); font-size: var(--text-xs);">{{ site.lab_address }}</li>
+            {% endif %}
+            {% if site.github_username %}
+            <li><a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            {% endif %}
+            {% if site.twitter_username %}
+            <li><a href="https://twitter.com/{{ site.twitter_username }}" target="_blank" rel="noopener noreferrer">Twitter / X</a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© {{ 'now' | date: "%Y" }} {{ site.lab_name }}. Built with Jekyll.</span>
+        <span>{{ site.institution }}</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+</body>
+</html>

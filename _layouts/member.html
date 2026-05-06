@@ -1,0 +1,57 @@
+---
+layout: default
+---
+<div class="page-header">
+  <div class="container">
+    <p class="page-header-eyebrow">{{ page.role }}</p>
+    <h1>{{ page.name }}</h1>
+    {% if page.affiliation %}
+    <p class="page-header-lead">{{ page.affiliation }}</p>
+    {% endif %}
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="person-detail">
+      <div>
+        {% if page.photo %}
+        <img src="{{ page.photo | relative_url }}" alt="Photo of {{ page.name }}"
+             class="person-detail-photo" width="240" height="240" loading="lazy">
+        {% else %}
+        <div class="person-detail-photo" style="display:flex;align-items:center;justify-content:center;background:var(--color-surface-offset);">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--color-text-faint)" stroke-width="1.5" aria-hidden="true">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </div>
+        {% endif %}
+
+        <div class="person-links">
+          {% if page.email %}
+          <a href="mailto:{{ page.email }}" class="person-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            Email
+          </a>
+          {% endif %}
+          {% if page.website %}
+          <a href="{{ page.website }}" class="person-link" target="_blank" rel="noopener noreferrer">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            Website
+          </a>
+          {% endif %}
+          {% if page.scholar %}
+          <a href="{{ page.scholar }}" class="person-link" target="_blank" rel="noopener noreferrer">Scholar</a>
+          {% endif %}
+          {% if page.github %}
+          <a href="https://github.com/{{ page.github }}" class="person-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="prose">
+        {{ content }}
+      </div>
+    </div>
+  </div>
+</section>

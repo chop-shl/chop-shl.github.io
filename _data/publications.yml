@@ -1,0 +1,40 @@
+# =============================================================================
+# Publications — Add new entries at the top (most recent first)
+# Fields: title, authors (use ** around your lab members' names),
+#         venue, year, pdf, doi, arxiv, code, abstract
+# =============================================================================
+
+- title: "Title of Your Most Recent Paper"
+  authors: "**Your Name**, Co-Author One, Co-Author Two"
+  venue: "Nature / Science / Journal Name, Volume(Issue), Pages"
+  year: 2025
+  type: "journal"
+  pdf: ""
+  doi: "https://doi.org/..."
+  arxiv: ""
+  code: ""
+  abstract: >
+    A 1–2 sentence summary of the paper's main contribution.
+
+- title: "Another Recent Conference Paper"
+  authors: "Co-Author One, **Your Name**, Co-Author Three"
+  venue: "Proceedings of Conference Name (CONF 2024)"
+  year: 2024
+  type: "conference"
+  pdf: ""
+  doi: ""
+  arxiv: "https://arxiv.org/abs/..."
+  code: "https://github.com/..."
+  abstract: >
+    Abstract summary here.
+
+- title: "An Older Journal Article"
+  authors: "**Your Name**, Co-Author"
+  venue: "Journal of Something Important, 12(3), 100–115"
+  year: 2023
+  type: "journal"
+  pdf: ""
+  doi: "https://doi.org/..."
+  arxiv: ""
+  code: ""
+  abstract: ""
