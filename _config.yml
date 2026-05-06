@@ -7,7 +7,7 @@ url: "https://chop-shl.github.io"
 baseurl: ""  # leave empty for username.github.io; use "/repo-name" for project pages
 
 # Lab Identity
-lab_name: "The Spatial Health Lab at Children's Hospital of Philadelphia"
+lab_name: "The Spatial Health Lab"
 lab_tagline: "Synthesizing Space & Place to Improve Healthcare"
 institution: "Children's Hospital of Philadelphia"
 department: "Anesthesia and Critical Care Medicine"
