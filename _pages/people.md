@@ -68,7 +68,7 @@ permalink: /people/
       <h2 class="section-title">Postdoctoral Researchers</h2>
     </div>
     <div class="people-grid reveal">
-      {% assign postdocs = site.data.members | where: "role", "Postdoctoral Researcher" %}
+      {% assign postdocs = site.data.members | where_exp: "m", "m.role != 'Principal Investigator'" %}
       {% for member in postdocs %}
       <div class="person-card">
         {% if member.photo %}
