@@ -1,7 +1,7 @@
 # =============================================================================
 # Site Settings — UPDATE THESE
 # =============================================================================
-title: "Your Lab Name"
+title: "CHOP Spatial Health Lab"
 description: "Brief description of your lab's research focus."
 url: "https://chop-shl.github.io"
 baseurl: ""  # leave empty for username.github.io; use "/repo-name" for project pages
