@@ -2,7 +2,7 @@
 # Lab Members — Edit this file to manage your team
 # =============================================================================
 
-- name: "Principal Investigator Name"
+- name: "Jonathan Tan, MD MPH MBI FASA"
   role: "Principal Investigator"
   photo: "/assets/images/team/pi.jpg"
   email: "pi@university.edu"
@@ -12,31 +12,18 @@
   bio: "A brief 2–3 sentence bio about the PI."
   slug: "pi-name"
 
-- name: "Postdoc Researcher"
-  role: "Postdoctoral Researcher"
+- name: "Andy Kampfschulte, MS PhD "
+  role: "Principal Bioinformatics Scientist"
   photo: "/assets/images/team/postdoc1.jpg"
   email: "postdoc@university.edu"
   scholar: ""
   bio: "Research interests and brief background."
   slug: "postdoc-name"
 
-- name: "PhD Student One"
-  role: "PhD Student"
+- name: "Alicia Adiwidjaja, BS"
+  role: "Data Analyst"
   photo: ""
   email: "student1@university.edu"
   bio: "PhD student working on project X."
   slug: "phd-student-one"
 
-- name: "PhD Student Two"
-  role: "PhD Student"
-  photo: ""
-  email: "student2@university.edu"
-  bio: "PhD student working on project Y."
-  slug: "phd-student-two"
-
-- name: "Master's Student"
-  role: "M.S. Student"
-  photo: ""
-  email: ""
-  bio: ""
-  slug: "ms-student"
